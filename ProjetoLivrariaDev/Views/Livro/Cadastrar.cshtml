@@ -4,28 +4,30 @@
     ViewData["Title"] = "Cadastrar Livro";
 }
 
-<h2 class="mb-4">Cadastrar Novo Livro</h2>
+<div class="card shadow-sm col-md-6 offset-md-3">
+    <div class="card-body">
+        <h3 class="card-title mb-4">Cadastrar Novo Livro</h3>
 
-<div class="row">
-    <div class="col-md-6">
         <form asp-action="Cadastrar" method="post">
             <div class="mb-3">
-                <label asp-for="Titulo" class="form-label">Título</label>
-                <input asp-for="Titulo" class="form-control" required />
+                <label asp-for="Titulo" class="form-label">Título do Livro</label>
+                <input asp-for="Titulo" class="form-control" placeholder="Ex: Dom Casmurro" required />
             </div>
 
             <div class="mb-3">
                 <label asp-for="Autor" class="form-label">Autor</label>
-                <input asp-for="Autor" class="form-control" required />
+                <input asp-for="Autor" class="form-control" placeholder="Ex: Machado de Assis" required />
             </div>
 
             <div class="mb-3">
-                <label asp-for="Preco" class="form-label">Preço</label>
-                <input asp-for="Preco" type="number" step="0.01" class="form-control" required />
+                <label asp-for="Preco" class="form-label">Preço (R$)</label>
+                <input asp-for="Preco" type="number" step="0.01" class="form-control" placeholder="0.00" required />
             </div>
 
-            <button type="submit" class="btn btn-primary">Salvar</button>
-            <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">Salvar Livro</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+            </div>
         </form>
     </div>
 </div>
